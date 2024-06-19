@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>poojitha's youtube</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+    p{
+        font-family: roboto,arial;
+    }
+    .thumbnail{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .thumbnailrow{
+        margin-bottom: 10px;
+        position: relative;
+    }
+    .time{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        font-family: roboto,arial;
+        font-weight: 400;
+        font-size: 12px;
+        border-radius: 5px;
+    }
+
+    .caption{
+        font-family: roboto,arial;
+        font-weight: 500;
+        margin: 0;
+        margin-bottom: 8px;
+    }
+    .channel{
+        font-family: roboto,arial;
+        font-weight: 400;
+        font-size: 14px;
+        color: rgb(96, 96, 96);
+        margin: 0;
+        margin-bottom: 3px;
+    }
+    .stats{
+        font-family: roboto,arial;
+        font-weight: 400;
+        font-size: 14px;
+        color: rgb(96, 96, 96);
+        margin: 0;
+    
+        
+    }
+    .channelpicture{
+        display: inline-block;
+        width: 50px;
+
+        vertical-align: top;
+    }
+    .profile{
+        width: 40px;
+
+        border-radius: 50px;
+        
+    }
+    .videoinfo{
+        margin-left:10px;
+    }
+    .videodown{
+        display: grid;
+        grid-template-columns: 40px 1fr;
+    }
+    .videopreview{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 40px;
+        column-gap: 18px;
+        padding-top: 90px ;
+        padding-left: 115px;
+        background-color: rgb(243, 239, 239);
+    }
+    @media (max-width: 950px ){
+        .videopreview{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media (min-width: 1250px){
+        .videopreview{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+    .header{
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+        border-bottom-width: 1px;
+        border-top: 1px;
+        border-left: 0px;
+        border-right: 0px; 
+        border-style: solid;
+        border-color: rgb(193, 191, 191);
+        box-shadow: 1px;
+        margin-bottom: 10px;
+        position: fixed;
+        z-index: 1000;
+        background-color: white;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+    .left{
+       width: 160px; 
+       margin-right: 30px;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       
+    }
+    .middle{
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 40px;
+
+    }
+    .right{
+        width:250px ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .menu{
+        height: 40px;
+        display: inline-block;
+    }
+    .yt{
+        height: 25px;
+        display: inline-block;
+    }
+    .searchbar{
+        height: 37px;
+        flex: 1;
+        min-width:20px ;
+        padding-left: 10px;
+        font-size: 18px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(164, 159, 159) ;
+        box-shadow: inset 1px 2px 3px
+        rgba(0,0,0,0.05);
+        border-radius: 2px;
+        z-index: 100;
+    }
+    .searchbar::placeholder{
+        font-family: roboto,arial;
+        font-size: 18px;
+        color: rgb(127, 124, 124);
+    }
+    .searchbutton{
+        height: 40px;
+        width: 60px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(164, 159, 159) ;
+        background-color: rgba(240, 235, 235, 0.605);
+        box-shadow:1px ;
+        border-radius: 4px;
+        margin-left: -2px;
+
+    }
+    .searchicon{
+        height: 25px;
+        margin-left: 0px;
+
+        
+    }
+    .voicebutton{
+        height: 40px;
+        margin-left: 15px;
+        border-radius: 20px;
+        border-width: 0px;
+        
+    
+    }
+    .voiceicon{
+        height: 30px;
+        margin-top: 3px;
+    }
+    .upload{
+        height: 30px;
+    }
+    .notifications{
+        height: 30px;
+    }
+    .tools{
+        height: 30px;
+    }
+    .account{
+        height: 30px;
+        border-radius: 15px;
+    }
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0px;
+        width: 95px;
+        bottom: 0px;
+        background-color: white;
+        align-items: center;
+        
+        
+    }
+    .home{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+      .home:hover{
+        background-color: rgb(243, 239, 239) ;
+      }  
+
+    
+    .home img{
+        height: 40px;
+    }
+    .sidebar p{
+        font-family: roboto,arial;
+        font-weight: 600;
+        font-size: 15px;
+        margin: 0;
+        margin-top: 2px;
+    }
+    
+    
+
+    
+
+
+</style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="left">
+                <img class="menu" src="buttons/www.youtube.com_ (1).png">
+                <img class="yt" src="buttons/www.youtube.com_.png">
+            </div>
+            <div class="middle">
+                <input class="searchbar" type="text" placeholder="Search">
+                <button class="searchbutton"><img class="searchicon" src="buttons/93642.png"></button>
+                <button class="voicebutton"><img class="voiceicon" src="buttons/voice-57.png"></button>
+            </div>
+            <div class="right">
+                <img class="upload" src="buttons/add-new-video-upload-movie-260nw-1207013524.webp">
+                <img class="notifications" src="buttons/3119338.png">
+                <img class="tools" src="buttons/-apps_90405.webp">
+                <img class="account" src="buttons/unnamed.jpg">
+            </div>
+
+        </div>
+        <div class="sidebar">
+            <div class="home"><img src="buttons/home.png"><p>Home</p></div>
+            <div class="home"><img src="buttons/free-explore-1781524-1513844.png"><p>Explore</p></div>
+            <div class="home"><img src="buttons/subscriptions.png"><p>Subscriptions</p></div>
+            <div class="home"><img src="buttons/originals.png"><p>Originals</p></div>
+            <div class="home"><img src="buttons/library.png"><p>Library</p></div>
+        </div>
+        <div class="videopreview">
+            <div class="video1">
+                <div class="thumbnailrow"> <img class="thumbnail" src="thumbnail/hq720.webp">
+                    <div class="time">46:34</div>
+             </div>
+                <div class="videodown">
+                    <div class="channelpicture">
+                        <img class="profile" src="channel profiles/unnamed.jpg">
+        
+                    </div>
+                    
+                    <div class="videoinfo">
+                    <p class="caption">Suma Adda | Game Show | Love Me Movie Team-Ashish, Vaishnavi | Full Epi | 4th June 2024 | ETV</p>
+                    <p class="channel">etvteluguindia</p>
+                    <p class="stats">665K views  &middot; 6 days  ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video1">
+                <div class="thumbnailrow"> <img class="thumbnail" src="thumbnail/hq720 (1).webp"><div class="time">15:45</div> </div>
+                <div class="videodown">
+                    <div class="channelpicture">
+                        <img class="profile" src="channel profiles/channels4_profile (3).jpg">
+                         
+                    </div>
+                    
+                    <div class="videoinfo">
+                    <p class="caption">The Reality of DSA and Development in 2024! | Hiring Market Trends in 2024 for Software Engineers 😨</p>
+                    <p class="channel">TechnicalSuneja</p>
+                    <p class="stats">255K views  &middot; 1 month ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video1">
+                <div class="thumbnailrow"> <img class="thumbnail" src="thumbnail/hq720 (2).webp"> <div class="time">38:08</div> </div>
+                <div class="videodown">
+                    <div class="channelpicture">
+                        <img class="profile" src="channel profiles/channels4_profile (4).jpg">
+                        
+                    </div>
+                    
+                    <div class="videoinfo">
+                    <p class="caption">Master English With ChatGPT in 2024! (Full Guide)</p>
+                    <p class="channel">Janhavi Panwar</p>
+                    <p class="stats">298K views  &middot; 1 month ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video1">
+                <div class="thumbnailrow"> <img class="thumbnail" src="thumbnail/hq720 (3).webp"><div class="time">12:45</div> </div>
+                <div class="videodown">
+                    <div class="channelpicture">
+                        <img class="profile" src="channel profiles/channels4_profile.jpg">
+        
+                    </div>
+                    
+                    <div class="videoinfo">
+                    <p class="caption">The AI War Has Begun! Every Google I/O AI Announcement (Supercut)</p>
+                    <p class="channel">Ticker Symbol: YOU</p>
+                    <p class="stats">3M views  &middot; 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video1">
+                <div class="thumbnailrow"> <img class="thumbnail" src="thumbnail/hq720 (4).webp"><div class="time">8:56</div> </div>
+                <div class="videodown">
+                    <div class="channelpicture">
+                        <img class="profile" src="channel profiles/channels4_profile (1).jpg">
+        
+                    </div>
+                    
+                    <div class="videoinfo">
+                    <p class="caption">Sophia the Robot and Jimmy Sing a Duet of "Say Something"
+                    </p>
+                    <p class="channel">The Tonight Show Starring Jimmy Fallon</p>
+                    <p class="stats">24M views  &middot; 5 years ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video1">
+                <div class="thumbnailrow"> <img class="thumbnail" src="thumbnail/hq720 (5).webp"><div class="time">28:32</div> </div>
+                <div class="videodown">
+                    <div class="channelpicture">
+                        <img class="profile" src="channel profiles/channels4_profile (2).jpg">
+        
+                    </div>
+                    
+                    <div class="videoinfo">
+                    <p class="caption">How I got a Microsoft Internship | Software Development Intern at Microsoft India</p>
+                    <p class="channel">Sankho Kun</p>
+                    <p class="stats">598K views  &middot; 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video1">
+                <div class="thumbnailrow"> <img class="thumbnail" src="thumbnail/hq720.webp">
+                    <div class="time">46:34</div>
+             </div>
+                <div class="videodown">
+                    <div class="channelpicture">
+                        <img class="profile" src="channel profiles/unnamed.jpg">
+        
+                    </div>
+                    
+                    <div class="videoinfo">
+                    <p class="caption">Suma Adda | Game Show | Love Me Movie Team-Ashish, Vaishnavi | Full Epi | 4th June 2024 | ETV</p>
+                    <p class="channel">etvteluguindia</p>
+                    <p class="stats">665K views  &middot; 6 days  ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video1">
+                <div class="thumbnailrow"> <img class="thumbnail" src="thumbnail/hq720 (1).webp"><div class="time">15:45</div> </div>
+                <div class="videodown">
+                    <div class="channelpicture">
+                        <img class="profile" src="channel profiles/channels4_profile (3).jpg">
+                         
+                    </div>
+                    
+                    <div class="videoinfo">
+                    <p class="caption">The Reality of DSA and Development in 2024! | Hiring Market Trends in 2024 for Software Engineers 😨</p>
+                    <p class="channel">TechnicalSuneja</p>
+                    <p class="stats">255K views  &middot; 1 month ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
+    </body>
+</html>
+
+
+
+
+
